@@ -158,6 +158,14 @@ class LoggingControl {
         }
     }
 
+    static removeLogAllListeners() {
+        Log.emitter.removeAllListeners();
+        if (Log.emitter.listenerCount('log') === 0) {
+            Log.ENABLE_CALLBACK = false;
+            LoggingControl._notifyChange();
+        }
+    }
+
 }
 
 LoggingControl.emitter = new EventEmitter();

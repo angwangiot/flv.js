@@ -245,7 +245,7 @@ declare namespace FlvJs {
     }
 
     interface PlayerConstructor {
-        new (mediaDataSource: MediaDataSource, config?: Config): Player;
+        new(mediaDataSource: MediaDataSource, config?: Config): Player;
     }
 
     interface Player {
@@ -347,6 +347,7 @@ declare namespace FlvJs {
         applyConfig(config: Partial<LoggingControlConfig>): void;
         addLogListener(listener: (...args: any[]) => void): void;
         removeLogListener(listener: (...args: any[]) => void): void;
+        removeLogAllListeners(): void;
     }
 
     interface Events {
